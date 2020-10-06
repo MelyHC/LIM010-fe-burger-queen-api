@@ -21,12 +21,15 @@ app.use(authMiddleware(secret));
 // Registrar rutas
 routes(app, (err) => {
   if (err) {
+    console.log(3)
     throw err;
+    
   }
-
+  console.log(1)
   app.use(errorHandler);
 
   app.listen(port, () => {
     console.info(`App listening on port ${port}`);
+    console.log(2)
   });
 });
